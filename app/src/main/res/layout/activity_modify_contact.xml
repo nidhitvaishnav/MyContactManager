@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@android:dimen/app_icon_size"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+        <TextView
+            android:id="@+id/lbl_firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name: "
+            android:layout_weight="0.35"
+            android:gravity="right"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:id="@+id/data_firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="0.65"
+            android:gravity="center"
+            android:paddingRight="8dp"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/lbl_lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:text="Last Name: "
+            android:gravity="right"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:id="@+id/data_lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="0.65"
+            android:gravity="center"
+            android:paddingRight="8dp"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/tv_contactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:text="Contact No:"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"/>
+        <TextView
+            android:id="@+id/data_contactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="0.65"
+            android:gravity="center"
+            android:paddingRight="8dp"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/lbl_emailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.35"
+            android:gravity="right"
+            android:text="Email ID: "
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:id="@+id/data_emailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="0.65"
+            android:paddingRight="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:gravity="bottom|right"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modify Content"
+        android:drawableLeft="@android:drawable/ic_menu_set_as"/>
+</LinearLayout>

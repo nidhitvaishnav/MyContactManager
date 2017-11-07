@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyContactManager</string>
+    <string name="action_add">Add Contact</string>
+    <string name="action_delete">delete contact</string>
+    <string name="contact_intent">contact_intent</string>
+    <string name="contact_filePath">contact.txt</string>
+</resources>
