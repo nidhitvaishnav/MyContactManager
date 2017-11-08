@@ -10,34 +10,43 @@ public class Contacts {
     private String mailId;
 
     //Contact class with its getters and setters
-    public Contacts(String inFirstName, String inLastName, String inContactNumber, String inMailId){
+    public Contacts(String inFirstName, String inLastName, String inContactNumber, String inMailId) {
         firstName = inFirstName;
         lastName = inLastName;
         contactNumber = inContactNumber;
         mailId = inMailId;
     }
-    public void setFirstName(String firstName){
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public String getFirstName(){
+
+    public String getFirstName() {
         return firstName;
     }
-    public void setLastName(String lastName){
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public String getLastName(){
+
+    public String getLastName() {
         return lastName;
     }
-    public void setContactNumber(String contactNumber){
+
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
-    public String getContactNumber(){
+
+    public String getContactNumber() {
         return contactNumber;
     }
-    public void setMailId(String mailId){
+
+    public void setMailId(String mailId) {
         this.mailId = mailId;
     }
-    public String getMailId(){
+
+    public String getMailId() {
         return mailId;
     }
+
 }

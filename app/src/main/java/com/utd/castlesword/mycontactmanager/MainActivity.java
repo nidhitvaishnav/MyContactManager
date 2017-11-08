@@ -18,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**assignment of subject 6326 Human computer interaction
@@ -55,9 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 int itemPosition     = position;
                 TextView tvContact = (TextView) view.findViewById(R.id.contact_tv);
                 String  contactNo    = tvContact.getText().toString();
+                String firstName = findFirstName(contactNo);
+                String lastName = findLastName(contactNo);
+                String mailId = findMailId(contactNo);
                 Intent selectedContactIntent = new Intent(getApplicationContext(),ModifyContact.class);
-                selectedContactIntent.putExtra(getString(R.string.contact_intent), contactNo);
-
+                selectedContactIntent.putExtra(getString(R.string.contactNo_intent), contactNo);
+                selectedContactIntent.putExtra(getString(R.string.contactFirstName_intent), firstName);
+                selectedContactIntent.putExtra(getString(R.string.contactLastName_intent), lastName);
+                selectedContactIntent.putExtra(getString(R.string.contactMail_id_intent), mailId);
                 startActivity(selectedContactIntent);
             }
         });
@@ -90,8 +97,15 @@ public class MainActivity extends AppCompatActivity {
         //when activity is resumed, read file and load items
         contact_lv=(ListView)findViewById(R.id.contact_lv);
         listPhoneBook = new ArrayList<Contacts>();
-
         readFile();
+        Collections.sort(listPhoneBook, new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                Contacts c1 = (Contacts) o1;
+                Contacts c2 = (Contacts) o2;
+                return c1.getFirstName().compareToIgnoreCase(c2.getFirstName());
+            }
+        });
         adapter = new ContactAdapter(this, listPhoneBook);
         contact_lv.setAdapter(adapter);
         super.onResume();
@@ -131,5 +145,35 @@ public class MainActivity extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    String findFirstName(String contactNumber){
+        String firstName="";
+        for(int i = 0 ; i < listPhoneBook.size() ; i++){
+            Contacts contact = (Contacts) listPhoneBook.get(i);
+            if (contact.getContactNumber()==contactNumber) {
+                firstName = contact.getFirstName();
+            }
+        }
+        return firstName;
+    }
+    String findLastName(String contactNumber){
+        String lastName = "";
+        for(int i = 0 ; i < listPhoneBook.size() ; i++){
+            Contacts contact = (Contacts) listPhoneBook.get(i);
+            if (contact.getContactNumber()==contactNumber) {
+                lastName = contact.getLastName();
+            }
+        }
+        return lastName;
+    }
+    String findMailId(String contactNumber){
+        String mailId="";
+        for (int i=0; i<listPhoneBook.size(); i++){
+            Contacts contact = (Contacts)listPhoneBook.get(i);
+            if(contact.getContactNumber()==contactNumber){
+                mailId=contact.getMailId();
+            }
+        }
+        return mailId;
     }
 }

@@ -42,13 +42,17 @@ public class CreateContact extends AppCompatActivity {
                 firstName, lastName, contactNo, emailId));
 
         //storing contacts in the form of string
-        String outStr = firstName+","+lastName+","+contactNo+","+emailId;
+        String outStr = firstName+","+lastName+","+contactNo+","+emailId+"\r\n";
 
         //TODO: below code rewrites the file
         FileOutputStream outputStream = null;
         try {
-            outputStream  =  openFileOutput(getString(R.string.contact_filePath), getApplicationContext().MODE_PRIVATE);
+//            outputStream  =  openFileOutput(getString(R.string.contact_filePath), getApplicationContext().MODE_PRIVATE);
+            outputStream  =  openFileOutput(getString(R.string.contact_filePath), getApplicationContext().MODE_APPEND);
+
             outputStream.write(outStr.getBytes());
+
+//            outputStream.w
             outputStream.close();
             //display file saved message
             Toast.makeText(getBaseContext(), "File saved successfully!",

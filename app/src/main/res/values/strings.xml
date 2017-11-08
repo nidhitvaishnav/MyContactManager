@@ -2,6 +2,10 @@
     <string name="app_name">MyContactManager</string>
     <string name="action_add">Add Contact</string>
     <string name="action_delete">delete contact</string>
-    <string name="contact_intent">contact_intent</string>
-    <string name="contact_filePath">contact.txt</string>
+    <string name="contactNo_intent">contactNo_intent</string>
+
+    <string name="contact_filePath">contact.csv</string>
+    <string name="contactLastName_intent">contactLastName_intent</string>
+    <string name="contactFirstName_intent">contactFirstName_intent</string>
+    <string name="contactMail_id_intent">contactMail_id_intent</string>
 </resources>
